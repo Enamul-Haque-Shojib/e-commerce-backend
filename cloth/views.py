@@ -398,7 +398,7 @@ environ.Env.read_env()
 stripe.api_key = env("API_KEY")
 
 
-API_URL = 'http://127.0.0.1:8000'
+API_URL = 'https://enamulhaque.pythonanywhere.com/'
 def fun(cart): 
     # print('>>>>>>>>>', cart['image'])
     return {
