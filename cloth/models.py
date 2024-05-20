@@ -41,6 +41,7 @@ class Cloth(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     # image = models.ImageField(upload_to='static/images')
     image = models.URLField()
+    image2 = models.URLField(null=True, blank=True)
 
 
     def __str__(self) -> str:
