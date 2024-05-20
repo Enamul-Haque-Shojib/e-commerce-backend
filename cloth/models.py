@@ -90,7 +90,8 @@ class ClothWishList(models.Model):
     rating = models.FloatField(default=0.0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='static/images')
+    # image = models.ImageField(upload_to='static/images')
+    image = models.URLField()
 
 
     def __str__(self) -> str:
@@ -107,7 +108,8 @@ class ClothCartList(models.Model):
     rating = models.FloatField(default=0.0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='static/images')
+    # image = models.ImageField(upload_to='static/images')
+    image = models.URLField()
 
 
     def __str__(self) -> str:
