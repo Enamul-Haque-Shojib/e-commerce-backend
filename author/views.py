@@ -36,6 +36,7 @@ class UploadProfileView(APIView):
 
         user_profile, created = models.UserAccount.objects.get_or_create(user=user_auth)
         print('>>>>>>>>>>>>>>>>>>>>>',user_profile, created)
+        print('>>>>>>>>>>>>>>>>>>>>>',user_profile, created)
 
         user_profile.user = user_auth  # Update username if provided
         if profile_image:

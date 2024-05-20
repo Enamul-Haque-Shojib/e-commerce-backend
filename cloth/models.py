@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
+
 class Color(models.Model):
     name = models.CharField(max_length=30)
     slug = models.SlugField(max_length=40)
