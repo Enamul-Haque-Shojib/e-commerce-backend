@@ -37,11 +37,45 @@ class Cloth(models.Model):
     rating = models.FloatField(default=0.0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='static/images')
+    # image = models.ImageField(upload_to='static/images')
+    image = models.URLField()
 
 
     def __str__(self) -> str:
         return f"{self.name}"
+    
+#----------------------------------------------------------------
+# class Category(models.Model):
+#     categoryId = models.IntegerField(primary_key=True)
+#     parent_category = models.CharField(max_length=30)
+#     sub_category = models.CharField(max_length=30)
+#     slug = models.SlugField(max_length=40)
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now_add=True)
+#     def __str__(self):
+#         return self.categoryId
+    
+
+# class Product(models.Model):
+#     productId = models.IntegerField(primary_key=True)
+#     title = models.CharField(max_length=50)
+#     price = models.IntegerField()
+#     discount_price = models.IntegerField()
+#     quantity = models.IntegerField()
+#     summary = models.TextField()
+#     description = models.TextField()
+#     rating = models.FloatField(default=0.0)
+#     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+#     vendor = models.ForeignKey(User, on_delete=models.CASCADE)
+#     image = models.ImageField(upload_to='static/images')
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now_add=True)
+
+
+#     def __str__(self) -> str:
+#         return f"{self.name}"
+    
+# ----------------------------------------------------------------
     
 class ClothWishList(models.Model):
     clothid = models.IntegerField(null=True)
