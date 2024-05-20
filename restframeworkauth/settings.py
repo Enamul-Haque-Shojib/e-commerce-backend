@@ -90,6 +90,8 @@ WSGI_APPLICATION = 'restframeworkauth.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+CSRF_TRUSTED_ORIGINS = ['https://e-commerce-backend-8r60.onrender.com','https://*.127.0.0.1']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
