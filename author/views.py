@@ -35,8 +35,8 @@ class UploadProfileView(APIView):
                 user_auth = auth
 
         user_profile, created = models.UserAccount.objects.get_or_create(user=user_auth)
-        print('>>>>>>>>>>>>>>>>>>>>>',user_profile, created)
-        print('>>>>>>>>>>>>>>>>>>>>>',user_profile, created)
+        # print('>>>>>>>>>>>>>>>>>>>>>',user_profile, created)
+        # print('>>>>>>>>>>>>>>>>>>>>>',user_profile, created)
 
         user_profile.user = user_auth  # Update username if provided
         if profile_image:
@@ -108,7 +108,7 @@ class UserRegistrationApiView(APIView):
             # print("token: ",token)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             # print('uid: ', uid)
-            confirm_link = f"http://127.0.0.1:8000/author/active/{uid}/{token}"
+            confirm_link = f"https://enamulhaque.pythonanywhere.com/author/active/{uid}/{token}"
             email_subject = 'Confirm Your Email'
             email_body = render_to_string("confirm_email.html", {'confirm_link':confirm_link})
             email = EmailMultiAlternatives(email_subject, '', to=[user.email])

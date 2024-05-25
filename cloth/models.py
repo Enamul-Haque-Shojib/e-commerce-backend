@@ -22,8 +22,8 @@ class Size(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=30)
     slug = models.SlugField(max_length=40)
-    # image = models.ImageField(upload_to='static/images', null=True, blank=True)
-    image = models.URLField(null=True, blank=True)
+    image = models.ImageField(upload_to='static/images', null=True, blank=True)
+    # image = models.URLField(null=True, blank=True)
     def __str__(self):
         return self.name
     
@@ -39,8 +39,8 @@ class Cloth(models.Model):
     rating = models.FloatField(default=0.0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    # image = models.ImageField(upload_to='static/images')
-    image = models.URLField()
+    image = models.ImageField(upload_to='static/images')
+    # image = models.URLField()
     
 
 
@@ -91,8 +91,8 @@ class ClothWishList(models.Model):
     rating = models.FloatField(default=0.0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    # image = models.ImageField(upload_to='static/images')
-    image = models.URLField()
+    image = models.ImageField(upload_to='static/images')
+    # image = models.URLField()
 
 
     def __str__(self) -> str:
@@ -109,8 +109,8 @@ class ClothCartList(models.Model):
     rating = models.FloatField(default=0.0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    # image = models.ImageField(upload_to='static/images')
-    image = models.URLField()
+    image = models.ImageField(upload_to='static/images')
+    # image = models.URLField()
 
 
     def __str__(self) -> str:
